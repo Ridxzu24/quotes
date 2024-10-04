@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-image: url('pxfuel.jpg');
+    background-size: 89%;
+    background-position: center;
+  }
+
+.content {
+    position: relative; /* Jika perlu mengatur posisi elemen lain di atas gambar */
+    z-index: 1;
+  }
+  .quote {
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    animation: float 3s ease-in-out infinite;
+}
+h1 {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    font-size: 2rem;
+}
+
+p {
+    opacity: 0;
+    animation: fadeIn 2s ease-out 1s forwards;
+    font-size: 120%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Gaya dasar untuk semua ukuran layar */
+img {
+    max-width: 100%; /* Gambar tidak akan melebihi lebar container */
+    height: auto; /* Tinggi gambar akan menyesuaikan secara proporsional */
+  }
+  
+  /* Gaya khusus untuk layar dengan lebar maksimal 768px (misal: tablet) */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column; /* Ubah arah flex menjadi kolom */
+    }
+    img {
+      width: 80%; /* Sesuaikan lebar gambar untuk layar yang lebih kecil */
+      margin: 0 auto; /* Pusatkan gambar */
+    }
+  }
